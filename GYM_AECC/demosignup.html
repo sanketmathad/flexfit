@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create your account at FlexFit Gym to get started.">
+    <title>Sign Up | FlexFit Gym</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="FlexFit Gym Logo">
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="login.html" class="btn">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <div class="form-container">
+                <h1>Create Your Account</h1>
+                <form id="signup-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" minlength="6" required>
+                    </div>
+                    <div id="form-message" class="form-message-error"></div>
+                    <button type="submit" class="btn">Sign Up</button>
+                    <div class="form-footer">
+                        <p>Already a member? <a href="login.html">Log In</a></p>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const signupForm = document.getElementById('signup-form');
+            const messageDiv = document.getElementById('form-message');
+
+            signupForm.addEventListener('submit', async (e) => {
+                // 1. Prevent the form from submitting and reloading the page
+                e.preventDefault();
+                messageDiv.textContent = ''; // Clear previous messages
+
+                // 2. Get user input
+                const email = signupForm.email.value;
+                const password = signupForm.password.value;
+                
+                // Note: ReqRes.in is a test API. Any email/password will work for registration.
+                // A popular test user is eve.holt@reqres.in
+
+                try {
+                    // 3. Send the data to the API endpoint using fetch()
+                    const response = await fetch('https://reqres.in/api/register', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            email: email,
+                            password: password
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    // 4. Handle the API response
+                    if (response.ok) {
+                        // Success! The API returned a token.
+                        alert('Registration successful! You will now be redirected to the login page.');
+                        // Redirect to the login page
+                        window.location.href = 'login.html';
+                    } else {
+                        // Failure! The API returned an error.
+                        messageDiv.textContent = `Error: ${data.error}`;
+                        messageDiv.style.color = '#ff6b6b';
+                    }
+                } catch (error) {
+                    // Handle network errors
+                    messageDiv.textContent = 'A network error occurred. Please try again later.';
+                    console.error('Signup Error:', error);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

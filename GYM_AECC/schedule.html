@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View the weekly class schedule for FlexFit Gym. Filter by class type, trainer, and view details for each session.">
+    <title>Interactive Class Schedule | FlexFit Gym</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        </header>
+
+    <main>
+        <section id="schedule-section" class="container">
+            <div class="section-header">
+                <h2>Class Schedule</h2>
+                <p>Find your next class. Use the filters below to narrow your search.</p>
+            </div>
+
+            <div class="schedule-filters">
+                <div class="filter-group">
+                    <label for="class-type-filter">Class Type:</label>
+                    <select id="class-type-filter">
+                        <option value="all">All</option>
+                        <option value="yoga">Yoga</option>
+                        <option value="hiit">HIIT</option>
+                        <option value="strength">Strength</option>
+                        <option value="spin">Spin</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="trainer-filter">Trainer:</label>
+                    <select id="trainer-filter">
+                        <option value="all">All</option>
+                        <option value="sarah">Sarah</option>
+                        <option value="mike">Mike</option>
+                        <option value="mark">Mark</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="schedule-grid">
+                <div class="class-card" data-type="yoga" data-trainer="sarah" data-day="monday">
+                    <h3 class="class-title">Power Yoga</h3>
+                    <p class="class-time">Mon, 6:00 AM</p>
+                    <p class="class-trainer">Sarah Lee</p>
+                    <div class="class-details-hidden">
+                        <p>An invigorating flow class that builds strength, flexibility, and concentration. Perfect for starting your week with focus. Intensity: Medium.</p>
+                    </div>
+                </div>
+                <div class="class-card" data-type="hiit" data-trainer="mike" data-day="monday">
+                    <h3 class="class-title">HIIT</h3>
+                    <p class="class-time">Mon, 5:00 PM</p>
+                    <p class="class-trainer">Mike Davis</p>
+                    <div class="class-details-hidden">
+                        <p>High-Intensity Interval Training designed to torch calories, boost metabolism, and improve cardiovascular health. Get ready to sweat! Intensity: High.</p>
+                    </div>
+                </div>
+
+                <div class="class-card" data-type="spin" data-trainer="mike" data-day="tuesday">
+                    <h3 class="class-title">Spin Class</h3>
+                    <p class="class-time">Tue, 6:00 AM</p>
+                    <p class="class-trainer">Mike Davis</p>
+                    <div class="class-details-hidden">
+                        <p>A high-energy stationary bike workout with incredible music. A fantastic cardio challenge that's easy on the joints. Intensity: High.</p>
+                    </div>
+                </div>
+                 <div class="class-card" data-type="strength" data-trainer="mark" data-day="tuesday">
+                    <h3 class="class-title">Strength</h3>
+                    <p class="class-time">Tue, 5:00 PM</p>
+                    <p class="class-trainer">Mark Johnson</p>
+                    <div class="class-details-hidden">
+                        <p>Focus on fundamental lifts and functional movements to build lean muscle and overall strength. All levels welcome. Intensity: Medium-High.</p>
+                    </div>
+                </div>
+                </div>
+        </section>
+    </main>
+
+    <div id="class-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2 id="modal-title">Class Title</h2>
+            <p><strong>Trainer:</strong> <span id="modal-trainer"></span></p>
+            <p><strong>Time:</strong> <span id="modal-time"></span></p>
+            <hr>
+            <p id="modal-description">Full class description goes here.</p>
+            <a href="#" class="btn" style="margin-top: 1rem;">Book This Class</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        </footer>
+    
+    <script src="script.js"></script> 
+    <script>
+    // All new JavaScript will go here in the next step
+    </script>
+</body>
+</html>

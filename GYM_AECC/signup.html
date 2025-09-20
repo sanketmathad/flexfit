@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Fitness Fuel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Same gym background image as the login page for consistency */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .form-container {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-md mx-auto form-container">
+        <div class="bg-gray-900/70 backdrop-blur-sm rounded-2xl shadow-2xl p-8 md:p-12">
+            <header class="text-center mb-8">
+                <h1 class="text-4xl font-extrabold text-white bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-600">
+                    Join The Crew
+                </h1>
+                <p class="text-md text-gray-300 mt-2">Start your fitness journey with us today.</p>
+            </header>
+            
+            <form id="signup-form">
+                <div class="space-y-6">
+                    <div>
+                        <label for="fullname" class="block text-sm font-medium text-gray-300">Full Name</label>
+                        <input type="text" id="fullname" name="fullname" required
+                               class="mt-1 block w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300">Email Address</label>
+                        <input type="email" id="email" name="email" required
+                               class="mt-1 block w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                    </div>
+
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-300">Create Password</label>
+                        <input type="password" id="password" name="password" required
+                               class="mt-1 block w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <button type="submit" class="w-full bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold py-3 px-6 rounded-lg hover:from-orange-600 hover:to-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-orange-500 transition-all transform hover:scale-105 shadow-lg flex items-center justify-center text-lg">
+                        Create Account
+                    </button>
+                </div>
+            </form>
+            
+            <p class="text-center text-sm text-gray-400 mt-8">
+                Already have an account? 
+                <a href="./login.html" class="font-semibold text-orange-500 hover:text-orange-400">Log In</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Select the form using its ID
+        const form = document.getElementById('signup-form');
+
+        // Add an event listener for the 'submit' event
+        form.addEventListener('submit', function(event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+
+            // Show a success alert message
+            alert('Account created successfully!');
+
+            // Redirect to the login page
+            window.location.href = './login.html';
+        });
+    </script>
+
+</body>
+</html>

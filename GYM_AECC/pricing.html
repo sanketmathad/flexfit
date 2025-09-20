@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore flexible and affordable membership plans at FlexFit Gym. Compare plans and find the perfect pricing option to start your fitness journey.">
+    <title>Pricing & Memberships | FlexFit Gym</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        </header>
+
+    <main>
+        <section id="included-features" class="container">
+            <div class="section-header">
+                <h2>All Memberships Include</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-wifi"></i>
+                    <h3>Free High-Speed Wi-Fi</h3>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-lock"></i>
+                    <h3>Secure Locker Rooms</h3>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Initial Fitness Consultation</h3>
+                </div>
+                 <div class="feature-item">
+                    <i class="fas fa-users"></i>
+                    <h3>Access to All Group Classes</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing-plans">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Membership Plans</h2>
+                    <p>Choose a plan that works for you. No hidden fees, just results.</p>
+                </div>
+
+                <div class="billing-toggle">
+                    <span>Monthly</span>
+                    <label class="switch">
+                        <input type="checkbox" id="billing-switch">
+                        <span class="slider"></span>
+                    </label>
+                    <span>Annually (Save up to 15%)</span>
+                </div>
+
+                <div class="pricing-grid" id="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Basic</h3>
+                        <div class="price-container">
+                            <p class="price" data-monthly-price="₹2,499" data-annual-price="₹2,099">₹2,499</p>
+                            <span class="billing-cycle">/month</span>
+                        </div>
+                        <p class="saving-badge">Billed monthly</p>
+                        <ul>
+                            <li>Full Gym Access (Standard Hours)</li>
+                            <li>Unlimited Group Classes</li>
+                            <li>Locker Room Access</li>
+                            
+                        </ul>
+                        <a href="gym-form.html" class="btn">Buy</a>
+                    </div>
+
+                    <div class="pricing-card featured">
+                        <span class="featured-badge">Most Popular</span>
+                        <h3>Pro</h3>
+                        <div class="price-container">
+                            <p class="price" data-monthly-price="₹3,499" data-annual-price="₹2,999">₹3,499</p>
+                            <span class="billing-cycle">/month</span>
+                        </div>
+                        <p class="saving-badge">Billed monthly</p>
+                        <ul>
+                            <li><strong>24/7</strong> Full Gym Access</li>
+                            <li>Unlimited Group Classes</li>
+                            <li><strong>1 Free Personal Training Session/Mo</strong></li>
+                            <li>Guest Passes (2/month)</li>
+                        </ul>
+                        <a href="gym-form.html" class="btn">Buy</a>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3>VIP</h3>
+                        <div class="price-container">
+                            <p class="price" data-monthly-price="₹4,999" data-annual-price="₹4,299">₹4,999</p>
+                            <span class="billing-cycle">/month</span>
+                        </div>
+                        <p class="saving-badge">Billed monthly</p>
+                        <ul>
+                            <li><strong>Everything in Pro, plus:</strong></li>
+                            <li>Towel Service & Premium Lockers</li>
+                            <li>Nutritional Coaching</li>
+                            <li>Unlimited Guest Passes</li>
+                        </ul>
+                        <a href="gym-form.html" class="btn">Buy</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section id="faq">
+            </section>
+
+    </main>
+    
+    <footer class="footer">
+        </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const billingSwitch = document.getElementById('billing-switch');
+            const pricingCards = document.querySelectorAll('.pricing-card');
+
+            function updatePrices() {
+                const isAnnual = billingSwitch.checked;
+
+                pricingCards.forEach(card => {
+                    const priceEl = card.querySelector('.price');
+                    const monthlyPrice = priceEl.dataset.monthlyPrice;
+                    const annualPrice = priceEl.dataset.annualPrice;
+                    const cycleEl = card.querySelector('.billing-cycle');
+                    const savingEl = card.querySelector('.saving-badge');
+
+                    if (isAnnual) {
+                        priceEl.textContent = annualPrice; // Directly use the Rupee value
+                        cycleEl.textContent = '/month';
+                        savingEl.textContent = 'Billed annually';
+                    } else {
+                        priceEl.textContent = monthlyPrice; // Directly use the Rupee value
+                        cycleEl.textContent = '/month';
+                        savingEl.textContent = 'Billed monthly';
+                    }
+                });
+            }
+
+            billingSwitch.addEventListener('change', updatePrices);
+
+            // Initialize prices on page load
+            updatePrices();
+        });
+    </script>
+</body>
+</html>

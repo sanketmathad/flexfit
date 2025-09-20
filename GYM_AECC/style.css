@@ -1,0 +1,800 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* --- CSS Variables for Branding --- */
+:root {
+    --primary-color: #ff6600; /* Energetic Orange */
+    --dark-color: #1a1a1a;
+    --medium-dark-color: #2c2c2c;
+    --light-color: #f4f4f4;
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* --- Global & Reset Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1, h2, h3, h4 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.2rem; color: var(--primary-color); }
+h3 { font-size: 1.5rem; }
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 4rem 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e65c00;
+}
+
+.btn-dark {
+    background: var(--medium-dark-color);
+}
+
+.btn-dark:hover {
+    background: #444;
+}
+
+
+/* --- Header & Navigation --- */
+.header {
+    background: var(--medium-dark-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo img {
+    height: 50px; /* Adjust as needed */
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-menu a {
+    color: var(--light-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    color: var(--primary-color);
+}
+
+/* Mobile Menu Styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--light-color);
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--medium-dark-color);
+    padding: 3rem 2rem;
+    border-top: 2px solid var(--primary-color);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-col h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-col ul li a {
+    color: var(--light-color);
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--primary-color);
+}
+
+.social-icons a {
+    margin-right: 1rem;
+    font-size: 1.5rem; /* Requires a font icon library like Font Awesome */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #444;
+    font-size: 0.9rem;
+}
+
+.footer-bottom a {
+    margin: 0 0.5rem;
+}
+
+
+/* --- Homepage Specific --- */
+#hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/hero-bg.jpg') no-repeat center center/cover;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+#services .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.service-item {
+    background: var(--medium-dark-color);
+    padding: 2rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+}
+
+.service-item i { /* For icon fonts */
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+#testimonials .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background: var(--medium-dark-color);
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 5px solid var(--primary-color);
+}
+
+.testimonial-card blockquote {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+.testimonial-author img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+.testimonial-author cite {
+    font-weight: bold;
+}
+
+#cta {
+    background-color: var(--primary-color);
+    text-align: center;
+}
+
+#cta h2 {
+    color: var(--light-color);
+}
+
+/* --- About Page Specific --- */
+.about-content, .mission-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+.about-content img, .mission-content img {
+    border-radius: 10px;
+}
+.trainers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+.trainer-card {
+    background: var(--medium-dark-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.trainer-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+.trainer-card .trainer-info {
+    padding: 1.5rem;
+}
+
+/* --- Pricing Page Specific --- */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: center;
+}
+.pricing-card {
+    background: var(--medium-dark-color);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.pricing-card.featured {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.5);
+    border: 2px solid var(--primary-color);
+}
+.pricing-card h3 { color: var(--primary-color); }
+.pricing-card .price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+.pricing-card .price span {
+    font-size: 1rem;
+    font-weight: normal;
+}
+.pricing-card ul {
+    margin: 1.5rem 0;
+}
+.pricing-card ul li {
+    margin-bottom: 0.8rem;
+}
+.faq-item {
+    background: var(--medium-dark-color);
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+.faq-item summary {
+    padding: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+}
+.faq-item summary::-webkit-details-marker { display: none; } /* Hide default arrow */
+.faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: 1rem;
+    font-size: 1.5rem;
+    transition: transform 0.2s;
+}
+.faq-item[open] summary::after {
+    transform: rotate(45deg);
+}
+.faq-item div {
+    padding: 0 1rem 1rem;
+    border-top: 1px solid #444;
+}
+
+/* --- Schedule Page Specific --- */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    text-align: center;
+    overflow-x: auto;
+    display: block;
+}
+.schedule-table th, .schedule-table td {
+    border: 1px solid var(--medium-dark-color);
+    padding: 1rem;
+}
+.schedule-table thead {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    font-weight: bold;
+}
+.schedule-table tbody tr:nth-child(even) {
+    background-color: var(--medium-dark-color);
+}
+.schedule-table td span {
+    display: block;
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+/* --- Contact Page Specific --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+.contact-info ul li {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+.contact-info ul li i {
+    color: var(--primary-color);
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}
+.contact-form form .form-group {
+    margin-bottom: 1.5rem;
+}
+.contact-form form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.contact-form form input,
+.contact-form form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background: var(--medium-dark-color);
+    color: var(--light-color);
+}
+.map-container iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+    border-radius: 10px;
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    #hero h1 { font-size: 2.8rem; }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 72px; /* Header height */
+        flex-direction: column;
+        background-color: var(--medium-dark-color);
+        width: 100%;
+        height: calc(100vh - 72px);
+        text-align: center;
+        transition: 0.3s;
+        gap: 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        width: 100%;
+    }
+    
+    .nav-menu a {
+        padding: 1.5rem 0;
+        display: block;
+        width: 100%;
+    }
+
+    .nav-menu .btn {
+        margin-top: 1rem;
+    }
+
+    .hamburger {
+        display: block;
+    }
+    
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    
+    .about-content, .mission-content, .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* css for signup page */
+/* --- Form Page Styles (Signup & Login) --- */
+.form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+}
+
+.form-container {
+    background: var(--medium-dark-color);
+    padding: 2.5rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.form-container h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background: var(--dark-color);
+    color: var(--light-color);
+    font-size: 1rem;
+}
+
+.form-container .btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.form-footer a {
+    font-weight: 600;
+}
+
+/* --- Interactive Schedule Styles --- */
+.schedule-filters {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-group label {
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.filter-group select {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background: var(--medium-dark-color);
+    color: var(--light-color);
+    font-size: 1rem;
+}
+
+#schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.class-card {
+    background: var(--medium-dark-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-color);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.class-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.class-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--light-color);
+}
+
+.class-card .class-time {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.class-card .class-trainer {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* Color-coding based on data-type attribute */
+.class-card[data-type="yoga"] { border-left-color: #4a90e2; }
+.class-card[data-type="hiit"] { border-left-color: #f5a623; }
+.class-card[data-type="strength"] { border-left-color: #d0021b; }
+.class-card[data-type="spin"] { border-left-color: #7ed321; }
+
+.class-details-hidden {
+    display: none; /* Hide the detailed description in the card */
+}
+
+/* --- Modal Styles --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--medium-dark-color);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    transform: translateY(-50px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: var(--light-color);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* --- Updated Pricing Page Styles --- */
+
+/* Included Features Section */
+#included-features {
+    background-color: var(--medium-dark-color);
+}
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    text-align: center;
+}
+.feature-item i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Billing Toggle Switch */
+.billing-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+    gap: 1rem;
+    font-weight: 600;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #555;
+    transition: .4s;
+    border-radius: 34px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Updated Pricing Card */
+.pricing-card {
+    position: relative;
+    overflow: hidden;
+}
+.featured-badge {
+    position: absolute;
+    top: 15px;
+    right: -30px;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 5px 30px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transform: rotate(45deg);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.price-container {
+    margin: 1rem 0;
+}
+.price {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.price sup {
+    font-size: 1.5rem;
+    top: -1em;
+}
+.billing-cycle, .saving-badge {
+    color: #ccc;
+    font-size: 0.9rem;
+    transition: opacity 0.3s ease;
+}
+
+/* Comparison Table */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    text-align: center;
+}
+.comparison-table th, .comparison-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--medium-dark-color);
+}
+.comparison-table thead {
+    background: var(--medium-dark-color);
+}
+.comparison-table td:first-child {
+    text-align: left;
+    font-weight: 600;
+}
+.comparison-table .fa-check {
+    color: #7ed321; /* Green check */
+    font-size: 1.2rem;
+}
+.comparison-table .fa-times {
+    color: #d0021b; /* Red X */
+    font-size: 1.2rem;
+}
